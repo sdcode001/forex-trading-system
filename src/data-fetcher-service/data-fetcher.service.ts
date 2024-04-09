@@ -10,7 +10,7 @@ import { setObject } from '../../redux/actions';
 @Injectable()
 export class DataFetcherService {
    
-    @Cron(CronExpression.EVERY_10_HOURS)
+    @Cron(CronExpression.EVERY_30_SECONDS)
     fetchData() {
       const base_currency = 'USD'  
       const api_url = `https://v6.exchangerate-api.com/v6/3612f15bfefc250299334267/latest/${base_currency}`;
