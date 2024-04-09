@@ -15,7 +15,7 @@ export class AccountsController {
   @Post('/topup')
   @UseGuards(AuthGuard())  //protected route
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Performs top-up balance in user account with bearer token authentication' })
+  @ApiOperation({ summary: 'This API allows users to top up their account with a specified amount in a given currency with bearer token authentication'})
   @ApiBody({ description: 'Amount to top-up in a given currency', type:  TopUpAccountDto})
   @ApiResponse({ status: 200, description: 'Return updated balance after top-up', type: TopUpAccountResponseDto })
   async topUpAccount(@Body() body: { currency: string; amount: number }, @Req() req): Promise<object> {
@@ -25,7 +25,7 @@ export class AccountsController {
   @Get('/balance')
   @UseGuards(AuthGuard())  //protected route
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Fetches user balance in all currencies with bearer token authentication' })
+  @ApiOperation({ summary: 'This API retrieves the balances in all currencies for the user account with bearer token authentication'})
   @ApiResponse({ status: 200, description: 'Return balances in all currencies', type: BalanceDto })
   async getAccountBalance(@Req() req): Promise<object> {
     return await this.accountService.getAccountBalance(req.user);

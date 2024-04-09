@@ -12,7 +12,7 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('/signup')
-  @ApiOperation({ summary: 'Perform SignUp for User' })
+  @ApiOperation({ summary: 'This API performs SignUp for user and returns a JWT Bearer token' })
   @ApiBody({ description: 'User SignUp request body', type: SignUpDto })
   @ApiResponse({ status: 200, description: 'Return JWT Bearer token', type: SignUpLogInResponseDto })
   signUp(@Body() signUpDto: SignUpDto): Promise<object> {
@@ -20,7 +20,7 @@ export class AuthController {
   }
 
   @Post('/login')
-  @ApiOperation({ summary: 'Perform LogIn for User' })
+  @ApiOperation({ summary: 'This API performs LogIn for user and returns a JWT Bearer token' })
   @ApiBody({ description: 'User Login request body', type: LoginDto })
   @ApiResponse({ status: 200, description: 'Return JWT Bearer token', type: SignUpLogInResponseDto })
   login(@Body() loginDto: LoginDto): Promise<object> {
