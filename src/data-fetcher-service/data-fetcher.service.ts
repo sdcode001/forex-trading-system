@@ -39,7 +39,7 @@ export class DataFetcherService {
           this.handleError(error);
         }
       );
-     }
+    }
 
   
 

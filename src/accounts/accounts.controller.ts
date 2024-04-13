@@ -21,6 +21,7 @@ export class AccountsController {
   async topUpAccount(@Body() body: { currency: string; amount: number }, @Req() req): Promise<object> {
     return await this.accountService.topUpAccount(body.currency, body.amount, req.user);
   }
+  
 
   @Get('/balance')
   @UseGuards(AuthGuard())  //protected route

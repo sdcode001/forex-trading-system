@@ -5,6 +5,7 @@ import { Model } from 'mongoose';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 import { User } from '../../models/user.schema';
 
+
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
